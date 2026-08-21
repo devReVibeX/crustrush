@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-crust-cream text-crust-black font-body antialiased;
+}
+
+::selection {
+  @apply bg-crust-ember text-crust-cream;
+}
+
+.container-x {
+  @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-crust-ember px-6 py-3.5 text-sm font-semibold uppercase tracking-wide text-crust-cream shadow-card transition-all duration-300 hover:bg-crust-ember-dark hover:shadow-lift active:scale-[0.97];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-crust-black px-6 py-3.5 text-sm font-semibold uppercase tracking-wide text-crust-black transition-all duration-300 hover:bg-crust-black hover:text-crust-cream active:scale-[0.97];
+}
+
+.btn-light {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-crust-cream px-6 py-3.5 text-sm font-semibold uppercase tracking-wide text-crust-black shadow-card transition-all duration-300 hover:bg-white active:scale-[0.97];
+}
+
+.eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.25em] text-crust-ember;
+}
+
+.section-heading {
+  @apply font-display text-3xl font-semibold leading-tight text-crust-black sm:text-4xl lg:text-5xl;
+}
+
+.veg-dot {
+  @apply inline-flex h-4 w-4 items-center justify-center rounded-sm border-2 border-crust-olive p-[2px];
+}
+.veg-dot span {
+  @apply block h-full w-full rounded-full bg-crust-olive;
+}
+.nonveg-dot {
+  @apply inline-flex h-4 w-4 items-center justify-center rounded-sm border-2 border-crust-ember p-[2px];
+}
+.nonveg-dot span {
+  @apply block h-full w-full rounded-full bg-crust-ember;
+}
+
+.field-input {
+  @apply w-full rounded-lg border border-black/15 bg-crust-cream/40 px-4 py-3 text-sm text-crust-black outline-none transition-colors focus:border-crust-ember focus:bg-white;
+}
+
+.card-surface {
+  @apply rounded-xl2 border border-black/5 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift;
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modern interaction polish */
+button, a { -webkit-tap-highlight-color: transparent; }
+.card-surface { backdrop-filter: blur(8px); }
+.btn-primary, .btn-secondary, .btn-light { transform: translateZ(0); }
+.btn-primary:hover, .btn-secondary:hover, .btn-light:hover { transform: translateY(-1px); }
+input::placeholder { color: rgb(23 23 23 / 45%); }
